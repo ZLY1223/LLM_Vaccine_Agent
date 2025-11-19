@@ -22,9 +22,9 @@ By comparing multiple LLM families (OpenAI, Google, and open-source), we examine
 ```
 LLM_Media_Vaccine_Agent/
 ├── data/ # Example input data and results
-├── Chatgpt/ # Main pipeline for GPT-4o-mini / GPT-4.1
-├── Gemini-2.5-flash/ # Gemini-2.5-Flash-based experiments
-├── Llama/ # LLaMA-4-Scout-17B-based experiments
+├── Chatgpt.ipynb # Main pipeline for GPT-4o-mini / GPT-4.1
+├── Gemini-2.5-flash.ipynb # Gemini-2.5-Flash-based experiments
+├── Llama_4_17b.ipynb # LLaMA-4-Scout-17B-based experiments
 ├── Counterfactual_Analysis.ipynb # M2 counterfactual variants (random diet, random articles, etc.)
 ├── TextGrad.ipynb # Prompt optimization via TextGrad (trainable segments between % Task Prompt and Output format)
 └── README.md
@@ -34,7 +34,7 @@ LLM_Media_Vaccine_Agent/
 
 ## 🔍 Notebook Descriptions
 
-### 🤖 **Chatgpt**
+### 🤖 **Chatgpt.ipynb**
 Implements all **M0–M2** configurations using **GPT-4o-mini** and **GPT-4.1**.  
 - **M0 – Demographics-Only:** baseline simulation using demographic attributes  
 - **M1 – LLM-Survey Model:** adds prior belief variables to demographics  
@@ -44,7 +44,7 @@ Implements all **M0–M2** configurations using **GPT-4o-mini** and **GPT-4.1**.
 
 ---
 
-### 🌐 **Gemini_2_5_flash**
+### 🌐 **Gemini_2_5_flash.ipynb**
 Runs the same M0–M2 pipeline on **Gemini-2.5-Flash** (Google model).  
 - Mirrors the ChatGPT notebook to ensure architecture-consistent prompts and evaluation  
 - Provides a **cross-vendor comparison** between OpenAI (GPT) and Google (Gemini) systems  
@@ -52,7 +52,7 @@ Runs the same M0–M2 pipeline on **Gemini-2.5-Flash** (Google model).
 
 ---
 
-### 🦙 **Llama_4_17b**
+### 🦙 **Llama_4_17b.ipynb**
 Runs the same experiments on **LLaMA-4-Scout-17B** (open-weight model via Hugging Face).  
 Serves as the **open-source baseline** to benchmark against closed-source families (GPT / Gemini).  
 
