@@ -38,7 +38,7 @@ LLM_Media_Vaccine_Agent/
 Implements all **M0–M2** configurations using **GPT-4o-mini** and **GPT-4.1**.  
 - **M0 – Demographics-Only:** baseline simulation using demographic attributes  
 - **M1 – LLM-Survey Model:** adds prior belief variables to demographics  
-- **M2 – LLM-Media Model:** integrates demographics, beliefs, and media-exposure context  
+- **M2 – LLM-Media Model:** add media diet exposure to demographics and
   - Media diet assignment derived from participants’ demographics and beliefs  
   - Produces baseline results for comparison with Gemini-2.5-Flash and LLaMA-4-Scout-17B  
 
