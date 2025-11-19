@@ -1,4 +1,4 @@
-# 🧠 LLM-media model
+# 🧠 LLM-Media Model
 
 This repository contains experimental notebooks and scripts for simulating COVID-19 vaccine decision-making using **Large Language Models (LLMs)** — including **GPT-4o-mini**, **GPT-4.1**, **Gemini-2.5-Flash**, and **LLaMA-4-17B**.  
 Each notebook corresponds to a distinct model configuration (M0–M2) or analysis stage in the study.
@@ -13,8 +13,8 @@ By comparing multiple LLM families (OpenAI, Google, and open-source), we examine
 | Model | Description | Key Input Features |
 |--------|--------------|--------------------|
 | **M0 – Demographics Only** | Baseline model that predicts vaccine decisions purely from demographic attributes. | Age, gender, income, education |
-| **M1 – Survey Model** | Adds prior-belief variables on top of demographics (survey-based). | Demographics + attitudes toward vaccine, trust in science, perceived severity, etc. |
-| **M2 – Media Diet Model** | Incorporates personalized media diet on top of demographics (replacing belief inputs). | Demographics + Media Diet (Left Echochamber / Center-ish / Right Echochamber / Misinformation-Only) |
+| **M1 – LLM-Survey Model** | Adds prior-belief variables on top of demographics (survey-based). | Demographics + attitudes toward vaccine, trust in science, perceived severity, etc. |
+| **M2 – LLM-Media Model** | Incorporates personalized media diet on top of demographics (replacing belief inputs). | Demographics + Media Diet (Left Echochamber / Center-ish / Right Echochamber / Misinformation-Only) |
 
 ---
 
@@ -22,9 +22,9 @@ By comparing multiple LLM families (OpenAI, Google, and open-source), we examine
 ```
 LLM_Media_Vaccine_Agent/
 ├── data/ # Example input data and results
-├── Chatgpt.ipynb # Main pipeline for GPT-4o-mini / GPT-4.1
-├── Gemini-2.5-flash.ipynb # Gemini-2.5-Flash-based experiments
-├── Llama_4_17b.ipynb # LLaMA-4-17B-based experiments
+├── Chatgpt/ # Main pipeline for GPT-4o-mini / GPT-4.1
+├── Gemini-2.5-flash/ # Gemini-2.5-Flash-based experiments
+├── Llama/ # LLaMA-4-Scout-17B-based experiments
 ├── Counterfactual_Analysis.ipynb # M2 counterfactual variants (random diet, random articles, etc.)
 ├── TextGrad.ipynb # Prompt optimization via TextGrad (trainable segments between % Task Prompt and Output format)
 └── README.md
@@ -34,17 +34,17 @@ LLM_Media_Vaccine_Agent/
 
 ## 🔍 Notebook Descriptions
 
-### 🤖 **Chatgpt.ipynb**
+### 🤖 **Chatgpt**
 Implements all **M0–M2** configurations using **GPT-4o-mini** and **GPT-4.1**.  
 - **M0 – Demographics-Only:** baseline simulation using demographic attributes  
-- **M1 – Survey Model:** adds prior belief variables to demographics  
-- **M2 – Media Diet Model:** integrates demographics, beliefs, and media-exposure context  
+- **M1 – LLM-Survey Model:** adds prior belief variables to demographics  
+- **M2 – LLM-Media Model:** integrates demographics, beliefs, and media-exposure context  
   - Media diet assignment derived from participants’ demographics and beliefs  
-  - Produces baseline results for comparison with Gemini-2.5-Flash and LLaMA-4-17B  
+  - Produces baseline results for comparison with Gemini-2.5-Flash and LLaMA-4-Scout-17B  
 
 ---
 
-### 🌐 **Gemini_2_5_flash.ipynb**
+### 🌐 **Gemini_2_5_flash**
 Runs the same M0–M2 pipeline on **Gemini-2.5-Flash** (Google model).  
 - Mirrors the ChatGPT notebook to ensure architecture-consistent prompts and evaluation  
 - Provides a **cross-vendor comparison** between OpenAI (GPT) and Google (Gemini) systems  
@@ -52,8 +52,8 @@ Runs the same M0–M2 pipeline on **Gemini-2.5-Flash** (Google model).
 
 ---
 
-### 🦙 **Llama_4_17b.ipynb**
-Runs the same experiments on **LLaMA-4-17B** (open-weight model via Hugging Face).  
+### 🦙 **Llama_4_17b**
+Runs the same experiments on **LLaMA-4-Scout-17B** (open-weight model via Hugging Face).  
 Serves as the **open-source baseline** to benchmark against closed-source families (GPT / Gemini).  
 
 ---
@@ -67,7 +67,7 @@ Implements **prompt-engineering optimization** using **TextGrad**, applied to al
 ---
 
 ### 🔁 **Counterfactual_Analysis.ipynb**
-Implements multiple **M2 counterfactual variants** across all models (GPT-4o-mini / GPT-4.1 / Gemini-2.5-Flash / LLaMA-4-17B):  
+Implements multiple **M2 counterfactual variants** across all models (GPT-4o-mini / GPT-4.1 / Gemini-2.5-Flash / LLaMA-4-Scout-17B ):  
 - **Random Diet Assignment** – random media exposure per participant  
 - **Random 5 Articles Sampling** – five random articles per diet  
 - **Random 10 Articles Sampling** – ten random articles per diet  
@@ -112,7 +112,7 @@ data/
 ## 🧠 Models Used
 - **GPT-4o-mini / GPT-4.1** — OpenAI API  
 - **Gemini-2.5-Flash** — Google API  
-- **LLaMA-4-17B** — via Hugging Face Router  
+- **LLaMA-4-Scout-17B** — via Hugging Face Router  
 - **TextGrad** — for prompt optimization and reasoning-segment fine-tuning  
 
 ---
