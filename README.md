@@ -1,4 +1,4 @@
-# 🧠 LLM-Media Model
+# 🧠 VaccineLLM
 
 This repository contains experimental notebooks and scripts for simulating COVID-19 vaccine decision-making using **Large Language Models (LLMs)** — including **GPT-4o-mini**, **GPT-4.1**, **Gemini-2.5-Flash**, and **LLaMA-4-17B**.  
 Each notebook corresponds to a distinct model configuration (M0–M2) or analysis stage in the study.
